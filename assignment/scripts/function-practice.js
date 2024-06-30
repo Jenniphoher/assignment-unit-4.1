@@ -99,10 +99,11 @@ console.log('What was deleted:', getLast(arrayTwo));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 
+console.log('------ FIND ------');
 
 let arrayThree = [2, 6, 15, 50, 78, 234];
 
-function find(value, array) {
+function lookFor(value, array) {
   console.log('The value is:', value, 'and wants to be found in:', array);
   for(num of array) {
     if (num === value) {
@@ -111,9 +112,11 @@ function find(value, array) {
   } return false; // ends FOR
 } // ends find()
 
-console.log('The value exists:', find(2, arrayThree));
-console.log('The value exists:', find(78, arrayThree));
-console.log('The value exists:', find(127, arrayThree));
+console.log('The value exists:', lookFor(2, arrayThree));
+console.log('The value exists:', lookFor(78, arrayThree));
+console.log('The value exists:', lookFor(127, arrayThree));
+
+console.log('------ FIND END ------');
 
 
 // ----------------------
@@ -185,9 +188,31 @@ console.log('The new array is:', positiveNumbers);
 console.log('----------- PROBLEM ENDS -----------');
 
 
+
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+console.log('------ CODEWARS ------');
+
+// We write a function that returns true if the 1st string ends exactly with the 2nd string and false if not.
+
+function solution(str, ending) {
+    let end = ending.slice(ending.length - ending.length);
+    let string = str.slice(str.length - ending.length);
+    console.log(`This is ${end} and this is ${string}`);
+    if(end === string) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+console.log(solution('abcde', 'cde'));
+console.log(solution('abcde', 'tyui'));
+
+
+console.log('------ CODEWARS END ------');
 
 
 // DO NOT MODIFY
@@ -200,7 +225,7 @@ try {
     multiplyThree,
     isPositive,
     getLast,
-    find,
+    lookFor,
     isFirstLetter,
     sumAll,
     allPositive,
